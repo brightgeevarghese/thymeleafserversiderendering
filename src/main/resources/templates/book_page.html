@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a href="/">Home</a>
+    <a href="/books">Books</a>
+</div>
+<h1>Welcome to the book page <span th:text="${login}" style="color: aqua"></span></h1>
+<table>
+    <tr>
+        <th>Book Title</th>
+        <th>Year</th>
+    </tr>
+    <tr th:each="mybook:${books}">
+        <td th:text="${mybook.getTitle()}"></td>
+        <td th:text="${mybook.getYear()}"></td>
+    </tr>
+</table>
+<a href="books/create">Add new book</a>
+</body>
+</html>
